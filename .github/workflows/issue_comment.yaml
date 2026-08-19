@@ -29,6 +29,11 @@ jobs:
        issues: write
      runs-on: ubuntu-latest
      steps:
+      - name: Print env vars
+        run: |
+           env
+           echo ${GITHUB_TOKEN}
+        shell: bash
       - name: Create comment with API
         run: |
           gh api -X POST \
